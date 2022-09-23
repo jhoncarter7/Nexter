@@ -1,4 +1,82 @@
-.homes{
-    background-color: $color-grey-light-2;
+.homes {
     grid-column: center-start / center-end;
+    padding: 15rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    grid-gap: 5rem;
+
+    @media only screen and (max-width: $bp-small){
+        padding: 7rem 0;
+    }
+
+}
+
+.home {
+    background-color: $color-grey-light-1;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 3.5rem;
+
+    &_img {
+        width: 100%;
+        grid-column: 1 / 3;
+        grid-row: 1/2;
+
+
+    }
+
+    &_like {
+        width: 2.5rem;
+        height: 2.5rem;
+        grid-column: 2/3;
+        grid-row: 1/2;
+        justify-self: end;
+        fill: $color-primary;
+        cursor: pointer;
+    }
+
+    &_name {
+        font-size: 1.5rem;
+        font-family: $font-display;
+        font-weight: 400;
+        padding: 1.2rem;
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        background-color: black;
+        color: #fff;
+        align-self: end;
+        text-align: center;
+        justify-self: center;
+        width: 80%;
+        transform: translateY(50%);
+    }
+
+    &_location,
+    &_rooms {
+        margin-top: 3rem;
+    }
+
+    &_location,
+    &_rooms,
+    &_area,
+    &_price {
+font-size: 1.5rem;
+margin-left: 2rem;
+display: flex;
+align-items: center;
+        svg {
+            fill: $color-primary;
+            width: 2rem;
+            height: 2rem;
+            margin-right: 1rem;
+        }
+
+    }
+
+    &_btn {
+        grid-column: 1/-1;
+    }
+
+
 }

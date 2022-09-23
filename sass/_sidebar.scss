@@ -1,5 +1,54 @@
-.sidebar{
+.sidebar {
     background-color: $color-primary;
     grid-column: sidebar-start / sidebar-end;
     grid-row: 1 / -1;
+    display: flex;
+    justify-content: center;
+
+    @media only screen and (max-width: $bp-large) {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .nav-btn {
+        border: none;
+        height: 3px;
+        width: 4rem;
+        color: #fff;
+        margin-top: 4rem;
+        cursor: pointer;
+
+        &::before,
+        &::after {
+            height: 3px;
+            width: 4rem;
+            background-color: #fff;
+            content: "";
+            display: block;
+            cursor: pointer;
+        }
+
+        &::before {
+            transform: translateY(-1.5rem);
+        }
+
+        &::after {
+            transform: translateY(1.3rem);
+        }
+
+        @media only screen and (max-width: $bp-large) {
+            margin-top: 0;
+            margin-right: 2rem;
+
+            &::before {
+                transform: translateY(-1.2rem);
+            }
+
+            &::after {
+                transform: translateY(1rem);
+            }
+        }
+    }
 }
